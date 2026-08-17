@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   background: #f3f2ee;
@@ -19,7 +21,9 @@ body {
   font-size: 12px;
   line-height: 1.4;
 }
+
 /* HEADER */
+
 .site-header {
   position: fixed;
   top: 0;
@@ -31,16 +35,19 @@ body {
   padding: 28px 34px;
   z-index: 10;
 }
+
 .site-name {
   color: inherit;
   text-decoration: none;
   font-size: 11px;
   letter-spacing: 0.08em;
 }
+
 .nav {
   display: flex;
   gap: 30px;
 }
+
 .nav a {
   color: inherit;
   text-decoration: none;
@@ -48,10 +55,13 @@ body {
   letter-spacing: 0.08em;
   transition: opacity 0.4s ease;
 }
+
 .nav a:hover {
   opacity: 0.4;
 }
+
 /* HERO */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -59,12 +69,16 @@ body {
   justify-content: center;
   padding: 110px 30px 70px;
 }
-/* ARTWORK (legacy, kept in case reused elsewhere) */
+
+/* ARTWORK */
+/* 保留这一部分，方便以后其他页面继续使用 */
+
 .artwork-wrap {
   width: min(30vw, 430px);
   position: relative;
   transform: translate(4vw, -1vh);
 }
+
 .artwork-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -77,16 +91,20 @@ body {
     transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 1.6s ease;
 }
+
 .artwork-placeholder span {
   font-size: 9px;
   letter-spacing: 0.13em;
   opacity: 0.35;
 }
+
 .artwork-wrap:hover .artwork-placeholder {
   transform: translateY(-4px) scale(1.006);
   filter: contrast(1.02);
 }
+
 /* ARTWORK CAPTION */
+
 .artwork-info {
   margin-top: 12px;
   display: flex;
@@ -94,49 +112,143 @@ body {
   font-size: 9px;
   letter-spacing: 0.035em;
 }
+
 .artwork-info p {
   margin: 0;
 }
+
 /* BRAND HERO */
+
 .brand-hero {
   flex-direction: column;
   text-align: center;
   gap: 34px;
 }
+
+/* 整个 Logo 的鼠标交互区域 */
+
 .brand-mark {
   width: min(36vw, 500px);
+  position: relative;
+  cursor: default;
+  touch-action: manipulation;
 }
-.brand-mark img {
-  display: block;
+
+/* 键盘选中 Logo 时的提示 */
+
+.brand-mark:focus-visible {
+  outline: 1px solid rgba(107, 43, 34, 0.28);
+  outline-offset: 12px;
+}
+
+/* Logo 内部统一使用 780 × 550 的坐标系统 */
+
+.brand-mark-stage {
+  position: relative;
   width: 100%;
+  aspect-ratio: 780 / 550;
+}
+
+/* 中央粉色 Logo */
+/* 原图左右各裁掉了 43px，因此这里重新放回原来的位置 */
+
+.brand-mark-core {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: calc(43 / 780 * 100%);
+  width: calc(694 / 780 * 100%);
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  transform: none;
+  filter: none;
+}
+
+/* Hover 时中央粉色 Logo 仍然保持不动 */
+
+.brand-mark:hover .brand-mark-core {
+  transform: none;
+  filter: none;
+}
+
+/* 所有可移动字母的容器 */
+
+.brand-letters {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* 每个独立字母 */
+
+.mark-letter {
+  position: absolute;
+  left: calc(var(--x) / 780 * 100%);
+  top: calc(var(--y) / 550 * 100%);
+  width: calc(var(--w) / 780 * 100%);
+  height: calc(var(--h) / 550 * 100%);
+  transform-origin: 50% 56%;
+  will-change: transform, opacity;
+}
+
+/* 字母 PNG 的裁切窗口 */
+
+.sprite-letter {
+  --aw: 780;
+  overflow: hidden;
+}
+
+/* 放大完整字母图，然后通过坐标显示需要的单个字母 */
+
+.sprite-letter img {
+  position: absolute;
+  width: calc(var(--aw) / var(--w) * 100%);
+  max-width: none;
   height: auto;
-  transition:
-    transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 1.6s ease;
+  left: calc(-1 * var(--sx) / var(--w) * 100%);
+  top: calc(-1 * var(--sy) / var(--h) * 100%);
+  display: block;
+  pointer-events: none;
+  user-select: none;
 }
-.brand-mark:hover img {
-  transform: translateY(-4px) scale(1.006);
-  filter: contrast(1.02);
+
+/* A、M 和第二个 I 默认隐藏 */
+/* Hover 时由 script.js 控制它们出现 */
+
+.concealed-letter {
+  z-index: -1;
+  opacity: 0;
 }
+
+/* BRAND COPY */
+
 .brand-copy {
   display: flex;
   flex-direction: column;
   gap: 16px;
   color: #6b2b22;
 }
+
 .brand-copy p {
   margin: 0;
   font-size: 11px;
   line-height: 1.7;
   letter-spacing: 0.02em;
 }
+
 /* INTRO */
+
 .intro {
   min-height: 68vh;
   display: flex;
   align-items: center;
   padding: 0 8vw;
 }
+
 .intro p {
   width: 290px;
   margin-left: 8vw;
@@ -148,7 +260,9 @@ body {
   line-height: 1.5;
   letter-spacing: -0.015em;
 }
+
 /* FOOTER */
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -156,36 +270,54 @@ body {
   font-size: 9px;
   letter-spacing: 0.05em;
 }
+
 .site-footer p {
   margin: 0;
 }
+
+/* 减少动画模式 */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* MOBILE */
+
 @media (max-width: 700px) {
   .site-header {
     padding: 22px 20px;
   }
+
   .nav {
     gap: 14px;
   }
+
   .artwork-wrap {
     width: 58vw;
     transform: translate(5vw, 0);
   }
+
   .brand-mark {
     width: 74vw;
   }
+
   .brand-copy p {
     font-size: 10px;
   }
+
   .intro {
     min-height: 55vh;
     padding: 0 22px;
   }
+
   .intro p {
     width: 250px;
     margin-left: 0;
     font-size: 16px;
   }
+
   .site-footer {
     padding: 25px 20px;
   }
