@@ -1,222 +1,188 @@
 * {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
-
   background: #f3f2ee;
   color: #171717;
-
   font-family:
     "Helvetica Neue",
     Helvetica,
     Arial,
     sans-serif;
-
   font-size: 12px;
   line-height: 1.4;
 }
-
-
 /* HEADER */
-
 .site-header {
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   padding: 28px 34px;
-
   z-index: 10;
 }
-
 .site-name {
   color: inherit;
   text-decoration: none;
-
   font-size: 11px;
   letter-spacing: 0.08em;
 }
-
 .nav {
   display: flex;
   gap: 30px;
 }
-
 .nav a {
   color: inherit;
   text-decoration: none;
-
   font-size: 10px;
   letter-spacing: 0.08em;
-
   transition: opacity 0.4s ease;
 }
-
 .nav a:hover {
   opacity: 0.4;
 }
-
-
 /* HERO */
-
 .hero {
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 110px 30px 70px;
 }
-
-
-/* ARTWORK */
-
+/* ARTWORK (legacy, kept in case reused elsewhere) */
 .artwork-wrap {
   width: min(30vw, 430px);
-
   position: relative;
-
   transform: translate(4vw, -1vh);
 }
-
 .artwork-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
-
   background: #dddcd7;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-
   transition:
     transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 1.6s ease;
 }
-
 .artwork-placeholder span {
   font-size: 9px;
   letter-spacing: 0.13em;
   opacity: 0.35;
 }
-
 .artwork-wrap:hover .artwork-placeholder {
   transform: translateY(-4px) scale(1.006);
-
   filter: contrast(1.02);
 }
-
-
 /* ARTWORK CAPTION */
-
 .artwork-info {
   margin-top: 12px;
-
   display: flex;
   justify-content: space-between;
-
   font-size: 9px;
   letter-spacing: 0.035em;
 }
-
 .artwork-info p {
   margin: 0;
 }
-
-
+/* BRAND HERO */
+.brand-hero {
+  flex-direction: column;
+  text-align: center;
+  gap: 34px;
+}
+.brand-mark {
+  width: min(36vw, 500px);
+}
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:
+    transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.6s ease;
+}
+.brand-mark:hover img {
+  transform: translateY(-4px) scale(1.006);
+  filter: contrast(1.02);
+}
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #6b2b22;
+}
+.brand-copy p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
 /* INTRO */
-
 .intro {
   min-height: 68vh;
-
   display: flex;
   align-items: center;
-
   padding: 0 8vw;
 }
-
 .intro p {
   width: 290px;
-
   margin-left: 8vw;
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 17px;
   line-height: 1.5;
-
   letter-spacing: -0.015em;
 }
-
-
 /* FOOTER */
-
 .site-footer {
   display: flex;
   justify-content: space-between;
-
   padding: 30px 34px;
-
   font-size: 9px;
   letter-spacing: 0.05em;
 }
-
 .site-footer p {
   margin: 0;
 }
-
-
 /* MOBILE */
-
 @media (max-width: 700px) {
-
   .site-header {
     padding: 22px 20px;
   }
-
   .nav {
     gap: 14px;
   }
-
   .artwork-wrap {
     width: 58vw;
-
     transform: translate(5vw, 0);
   }
-
+  .brand-mark {
+    width: 74vw;
+  }
+  .brand-copy p {
+    font-size: 10px;
+  }
   .intro {
     min-height: 55vh;
-
     padding: 0 22px;
   }
-
   .intro p {
     width: 250px;
-
     margin-left: 0;
-
     font-size: 16px;
   }
-
   .site-footer {
     padding: 25px 20px;
   }
