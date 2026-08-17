@@ -3,52 +3,374 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Hanruo Zhang</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header class="site-header">
     <a class="site-name" href="#">HANRUO ZHANG</a>
-    <nav class="nav">
+
+    <nav class="nav" aria-label="Primary navigation">
       <a href="#">SHOP</a>
       <a href="#">ARCHIVE</a>
       <a href="#">ABOUT</a>
     </nav>
   </header>
+
   <main>
+
     <section class="hero brand-hero">
-      <div class="brand-mark">
-        <img src="images/brand-mark.png" alt="NIDOCERC arch mark">
+
+      <div
+        class="brand-mark"
+        aria-label="NIDO CERAMIC"
+        tabindex="0"
+      >
+        <div class="brand-mark-stage">
+
+          <!-- 保持稳定的中央粉色 Logo -->
+          <img
+            class="brand-mark-core"
+            src="images/brand-mark-non-letter.png"
+            alt=""
+            draggable="false"
+          >
+
+          <!-- 可独立运动的字母 -->
+          <div class="brand-letters" aria-hidden="true">
+
+            <!-- N -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="N"
+              style="
+                --x:23;
+                --y:280;
+                --w:26;
+                --h:34;
+                --sx:23;
+                --sy:22;
+                --nx:-5;
+                --ny:-4;
+                --nr:-3;
+                --tx:190;
+                --ty:340;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- I -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="I"
+              style="
+                --x:106;
+                --y:348;
+                --w:16;
+                --h:31;
+                --sx:106;
+                --sy:90;
+                --nx:4;
+                --ny:6;
+                --nr:2;
+                --tx:225;
+                --ty:343;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- D -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="D"
+              style="
+                --x:171;
+                --y:305;
+                --w:29;
+                --h:37;
+                --sx:171;
+                --sy:47;
+                --nx:-7;
+                --ny:3;
+                --nr:-2;
+                --tx:250;
+                --ty:339;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- O -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="O"
+              style="
+                --x:274;
+                --y:291;
+                --w:26;
+                --h:35;
+                --sx:274;
+                --sy:33;
+                --nx:5;
+                --ny:-5;
+                --nr:3;
+                --tx:288;
+                --ty:340;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- C -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="C"
+              style="
+                --x:478;
+                --y:297;
+                --w:27;
+                --h:33;
+                --sx:478;
+                --sy:39;
+                --nx:-4;
+                --ny:-7;
+                --nr:-3;
+                --tx:344;
+                --ty:341;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- E -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="E"
+              style="
+                --x:575;
+                --y:331;
+                --w:25;
+                --h:33;
+                --sx:575;
+                --sy:73;
+                --nx:7;
+                --ny:2;
+                --nr:2;
+                --tx:381;
+                --ty:342;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- R -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="R"
+              style="
+                --x:668;
+                --y:339;
+                --w:29;
+                --h:34;
+                --sx:668;
+                --sy:81;
+                --nx:4;
+                --ny:7;
+                --nr:4;
+                --tx:417;
+                --ty:340;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- A：来自完整版 letter.png -->
+            <span
+              class="mark-letter sprite-letter concealed-letter"
+              data-letter="A"
+              style="
+                --x:367;
+                --y:242;
+                --w:28;
+                --h:33;
+                --aw:915;
+                --sx:643;
+                --sy:27;
+                --nx:-6;
+                --ny:4;
+                --nr:-2;
+                --tx:455;
+                --ty:341;
+              "
+            >
+              <img
+                src="images/letter.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- M：来自完整版 letter.png -->
+            <span
+              class="mark-letter sprite-letter concealed-letter"
+              data-letter="M"
+              style="
+                --x:378;
+                --y:250;
+                --w:31;
+                --h:31;
+                --aw:915;
+                --sx:712;
+                --sy:29;
+                --nx:6;
+                --ny:-3;
+                --nr:3;
+                --tx:491;
+                --ty:343;
+              "
+            >
+              <img
+                src="images/letter.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- 第二个 I -->
+            <span
+              class="mark-letter sprite-letter concealed-letter"
+              data-letter="I"
+              style="
+                --x:390;
+                --y:248;
+                --w:16;
+                --h:31;
+                --sx:106;
+                --sy:90;
+                --nx:-3;
+                --ny:-6;
+                --nr:-2;
+                --tx:536;
+                --ty:343;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+            <!-- 最后一个 C -->
+            <span
+              class="mark-letter sprite-letter"
+              data-letter="C"
+              style="
+                --x:731;
+                --y:282;
+                --w:27;
+                --h:33;
+                --sx:731;
+                --sy:24;
+                --nx:7;
+                --ny:-4;
+                --nr:3;
+                --tx:562;
+                --ty:341;
+              "
+            >
+              <img
+                src="images/nido-ceramic-letters.png"
+                alt=""
+                draggable="false"
+              >
+            </span>
+
+          </div>
+        </div>
       </div>
-      <!-- 以下文字均为占位文字,待最终文案确定后替换 -->
+
+      <!-- 品牌介绍文字 -->
       <div class="brand-copy">
-        <p>这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍<br>
-           这是品牌介绍这是品牌介绍<br>
-           这是品牌介绍<br>
-           这是品牌介绍这是品牌介绍</p>
 
-        <p>这是品牌介绍这是品牌介绍这是品牌介绍<br>
-           这是品牌介绍这是品牌介绍<br>
-           这是品牌介绍这是品牌介绍这是品牌介绍<br>
-           这是品牌介绍</p>
+        <p>
+          这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍<br>
+          这是品牌介绍这是品牌介绍<br>
+          这是品牌介绍<br>
+          这是品牌介绍这是品牌介绍
+        </p>
 
-        <p>这是品牌介绍这是品牌介绍</p>
+        <p>
+          这是品牌介绍这是品牌介绍这是品牌介绍<br>
+          这是品牌介绍这是品牌介绍<br>
+          这是品牌介绍这是品牌介绍这是品牌介绍<br>
+          这是品牌介绍
+        </p>
 
-        <p>这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍</p>
+        <p>
+          这是品牌介绍这是品牌介绍
+        </p>
 
-        <p>这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍</p>
+        <p>
+          这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍
+        </p>
+
+        <p>
+          这是品牌介绍这是品牌介绍这是品牌介绍这是品牌介绍
+        </p>
+
       </div>
     </section>
+
     <section class="intro">
       <p>
         Objects held somewhere between intimacy,
         familiarity, and discomfort.
       </p>
     </section>
+
   </main>
+
   <footer class="site-footer">
     <p>Boston, MA</p>
-    <p>© 2026</p>
+    <p>&copy; 2026</p>
   </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
